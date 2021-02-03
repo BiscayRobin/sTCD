@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+html, body {
+        margin:0px;
+        height:100%;
+}
+
+.contenu {
+        height:100%;
+}
+</style>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-default.css"/>
+    <script src="EnigmesQ.js"></script>
+    <script src="sketch.js"></script>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+        <h1>Card Drawer</h1>
+        <form>
+                <div class="row responsive-label">
+                        <div class="col-sm-12 col-md-3">
+                                <label for="sf1-select" class="doc">Select Category</label>
+                        </div>
+                        <div class="col-sm-12 col-md">
+                                <select id="sf1-select" style="width:85%;" class="doc">
+                                        <option class="doc">Enigmes</option>
+                                        <option class="doc">Décimaux</option>
+                                        <option class="doc">Fractions</option>
+                                        <option class="doc">Décimaux et fractions</option> 
+                                </select>
+                        </div>
+                </div>
+                <div class="row responsive-label">
+                        <input type="button" value="Draw a card" class="primary col-sm-12 col-md-3" onclick="changeQuestion();"/>
+                </div>
+        </form>
+        <blockquote id="quotation-slot"></blockquote>
+</body>
+
+</html>
