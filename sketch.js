@@ -1,4 +1,5 @@
 let current_idx = undefined;
+let current_array = undefined;
 
 function changeQuestion() {
         let ctgrElmt = document.getElementById("sf1-select");
@@ -6,23 +7,33 @@ function changeQuestion() {
         let ctnElmt = document.getElementById("quotation-slot");
 
         current_idx = Math.floor(Math.random() * enigmes.length);
-        let usedArray = enigmes;
         switch(category) {
           case 'Enigmes':
+          current_array = enigmes;
           break;
           case 'Décimaux':
-          usedArray = decimaux;
+          current_array = decimaux;
           break;
           case 'Fractions':
-          usedArray = fractions;
+          current_array = fractions;
           break;
           case 'Décimaux et fractions':
-          usedArray = fractionsDecimaux
+          current_array = fractionsDecimaux
           break;
           default:
             return;
         }
 
-        ctnElmt.innerHTML = usedArray[current_idx][0];
-        ctnElmt.cite = usedArray[current_idx][1];
+        ctnElmt.innerHTML = current_array[current_idx][0];
+
+        let btnElmt = document.getElementById("answer-btn");
+        btnElmt.disabled = false;
+}
+
+function revealAnswer() { 
+        let ctnElmt = document.getElementById("quotation-slot");
+        ctnElmt.cite = current_array[current_idx][1];
+        
+        let btnElmt = document.getElementById("answer-btn");
+        btnElmt.disabled = true;
 }
