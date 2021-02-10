@@ -5,7 +5,7 @@ function changeQuestion() {
         let ctgrElmt = document.getElementById("sf1-select");
         let category = ctgrElmt.options[ctgrElmt.selectedIndex].text;
         let ctnElmt = document.getElementById("quotation-slot");
-        ctnElmt.cite = undefined;
+        ctnElmt.cite = "";
         
         current_idx = Math.floor(Math.random() * enigmes.length);
         switch(category) {
