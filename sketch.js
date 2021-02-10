@@ -2,10 +2,10 @@ let current_idx = undefined;
 let current_array = undefined;
 
 function changeQuestion() {
+        
         let ctgrElmt = document.getElementById("sf1-select");
         let category = ctgrElmt.options[ctgrElmt.selectedIndex].text;
         let ctnElmt = document.getElementById("quotation-slot");
-        ctnElmt.cite = "";
         
         current_idx = Math.floor(Math.random() * enigmes.length);
         switch(category) {
@@ -26,7 +26,8 @@ function changeQuestion() {
         }
 
         ctnElmt.innerHTML = current_array[current_idx][0];
-
+        ctnElmt.removeAttribute("cite");
+        
         let btnElmt = document.getElementById("answer-btn");
         btnElmt.disabled = false;
 }
